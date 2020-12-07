@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+ 
+{% block content %}
+{% if post%}
+    <h2>This is the result of your search</h2>
+
+    {% for post in queryset %} 
+         <a href="{{ post.get_absolute_url}}">{{ post.title }}</a>
+    {% endfor %}
+    {% else %}
+    <h2>No search found</h2>
+    {% endif %}
+{% endblock %}

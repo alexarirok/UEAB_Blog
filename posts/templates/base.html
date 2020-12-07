@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'head.html' %}
+<style>
+    body{
+        min-height: 100%;
+    }
+</style>
+<body>
+
+    {% include 'header.html' %}
+
+    {% block content %}
+
+    {% endblock %}
+
+    {% include 'footer.html' %}
+    
+    {% include 'scripts.html' %} 
+
+</body>
+</html>

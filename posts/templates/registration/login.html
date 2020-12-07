@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Sign in {% endblock %}
+{% block content %}
+
+  <h2>Login</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+  </form>
+  <br>
+  <p><strong>-- OR --</strong></p>
+<div class="row">
+  <div class="col-md-8 mx-auto social-container my-2 order-md-1">
+      <button class="btn btn-danger  mb-2">
+          <a href="#">Login with Instagram</a>
+      </button>
+      <button class="btn btn-primary mb-2">
+          <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook
+          </a>
+      </button>
+      <button class="btn btn-info mb-2">
+          <a href="{% url 'social:begin' 'linkedin-oauth2' %}">Login with Twitter</a>
+      </button>
+  </div>
+</div>
+</div>
+
+{% endblock %}
